@@ -20,11 +20,15 @@ public class Game {
 	
 	@Column(name = "game_year")
 	private Integer year;
-	private String genero;
+	private String genre;
 	private String platforms;
 	private Double score;
 	private String imgUrl;
+	
+	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
+	//redefirnir para text, varchar só pode 255 caracteres
+	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 
 	public Game() {
@@ -37,7 +41,7 @@ public class Game {
 		this.id = id;
 		this.title = title;
 		this.year = year;
-		this.genero = genero;
+		this.genre = genero;
 		this.platforms = platforms;
 		this.score = score;
 		this.imgUrl = imgUrl;
@@ -70,11 +74,11 @@ public class Game {
 	}
 
 	public String getGenero() {
-		return genero;
+		return genre;
 	}
 
 	public void setGenero(String genero) {
-		this.genero = genero;
+		this.genre = genero;
 	}
 
 	public String getPlatforms() {
